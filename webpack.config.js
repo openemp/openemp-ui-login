@@ -53,10 +53,23 @@ module.exports = (webpackConfigEnv = {}) => {
             },
           ],
         },
+        {
+          type: 'javascript/auto',
+          test: /\.i18n\.json$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: './public/i18n/[name].[ext]',
+              },
+            },
+          ],
+        },
       ],
     },
     devtool: 'source-map',
     devServer: {
+      contentBase: path.join(__dirname, 'dist'),
       before: (app) => {
         app.use(apiMocker('/api/v1', 'mock-api'));
       },
