@@ -1,4 +1,5 @@
 import './en.i18n.json';
+import './ar.i18n.json';
 
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
@@ -16,13 +17,13 @@ i18n
 
     lng: 'en',
     fallbackLng: 'en',
-    whitelist: ['en', 'de'],
 
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
+
     backend: {
-      loadPath: 'http://localhost:9011/public/i18n/{{lng}}.i18n.json',
+      loadPath: `//${process.env.HOST}:${process.env.PORT}/public/i18n/{{lng}}.i18n.json`,
     },
   });
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { navigate } from '@reach/router';
+import { useTranslation } from 'react-i18next';
 import { login } from 'api/authMethods';
 import {
   Avatar,
@@ -19,23 +20,12 @@ import {
   yup,
 } from '@openemp-mf/styleguide';
 
+import { LoginFields } from 'components';
+
 const SignInSchema = yup.object().shape({
   username: yup.string().required('This field is required.'),
   password: yup.string().required('This field is required.'),
 });
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -55,13 +45,18 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  select: {
+    '& :focus': {
+      backgroundColor: 'transparent',
+    },
+  },
 }));
 
 export default function SignIn() {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   const handleSubmit = (values) => {
-    console.log(values);
     login(values).then(() => {
       navigate('/', { replace: true });
     });
@@ -73,7 +68,7 @@ export default function SignIn() {
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>{/* <LockOutlinedIcon /> */}</Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          {t('Sign in')}
         </Typography>
         <Formik
           initialValues={{
@@ -84,61 +79,18 @@ export default function SignIn() {
           validationSchema={SignInSchema}
           onSubmit={handleSubmit}
         >
-          {({ errors, handleChange, touched }) => (
-            <Form className={classes.form}>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                id="username"
-                label="Username"
-                name="username"
-                autoComplete="username"
-                autoFocus
-                onChange={handleChange}
-                error={errors.username && touched.username}
-                helperText={errors.username && touched.username ? errors.username : null}
-              />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-                onChange={handleChange}
-                error={errors.password && touched.password}
-                helperText={errors.password && touched.password ? errors.password : null}
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox id="remember" name="remember" label="remember" color="primary" onChange={handleChange} />
-                }
-                label="Remember me"
-              />
-              <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-                Sign In
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    Don&#39;t have an account? Sign Up
-                  </Link>
-                </Grid>
-              </Grid>
-            </Form>
-          )}
+          {(props) => <LoginFields {...props} />}
         </Formik>
       </div>
       <Box mt={8}>
-        <Copyright />
+        <Typography variant="body2" color="textSecondary" align="center">
+          {'Copyright © '}
+          <Link color="inherit" href="https://openemp.org/">
+            {'OpenEmp '}
+          </Link>
+          {new Date().getFullYear()}
+          {'.'}
+        </Typography>
       </Box>
     </Container>
   );
