@@ -9,6 +9,7 @@
     "lint": "eslint src",
     "start": "webpack-dev-server",
     "test": "jest --passWithNoTests",
+    "extract-transl": "i18next --config i18next-parser.config.js",
     "build": "webpack --mode=production",
     "analyze": "webpack --mode=production --env.analyze=true",
     "prettier": "prettier --write './**'",
@@ -18,6 +19,7 @@
   "dependencies": {
     "@reach/router": "1.3.3",
     "axios": "^0.19.2",
+    "clsx": "^1.1.1",
     "i18next": "^19.5.1",
     "i18next-http-backend": "^1.0.15",
     "jwt-decode": "^2.2.0",
@@ -67,6 +69,7 @@
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
+    "i18next-parser": "^2.0.0",
     "jest": "^26.0.1",
     "jest-cli": "^26.0.1",
     "jsonwebtoken": "^8.5.1",

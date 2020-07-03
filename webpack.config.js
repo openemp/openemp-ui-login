@@ -81,7 +81,16 @@ module.exports = (webpackConfigEnv = {}) => {
       disableHostCheck: true,
       port: opts.port,
     },
-    externals: ['react', 'react-dom', '@reach/router', 'single-spa', new RegExp(`^@${opts.orgName}/`)],
+    externals: [
+      'react',
+      'react-dom',
+      '@reach/router',
+      'single-spa',
+      new RegExp(`^@${opts.orgName}/`),
+      'regenerator-runtime',
+      'axios',
+    ],
+
     plugins: [
       new DotenvWebpackPlugin(),
       new CleanWebpackPlugin(),

@@ -1,11 +1,12 @@
 /* eslint-disable import/prefer-default-export */
 import decode from 'jwt-decode';
-import axios from 'axios';
+import Axios from 'axios';
+
+const axios = Axios.default;
 
 function isTokenExpired(accessToken) {
   try {
     const decoded = decode(accessToken);
-    console.log(decoded);
     if (decoded.exp < Date.now() / 1000) {
       // Checking if accessToken is expired.
       return true;
@@ -31,7 +32,7 @@ function getRefreshToken() {
 
 export function getConfirm() {
   const answer = decode(getAccessToken());
-  console.log('Recieved answer!');
+  // console.log('Recieved answer!');
   return answer;
 }
 

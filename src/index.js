@@ -8,11 +8,10 @@ import Root from './root.component';
 // eslint-disable-next-line no-undef
 
 function domElementGetter() {
-  let el = document.getElementById('app');
+  let el = document.getElementById('root');
   if (!el) {
     el = document.createElement('div');
-    el.id = 'app';
-    el.className = process.env.PROJECT_NAME;
+    el.id = 'root';
     document.body.appendChild(el);
   }
   return el;

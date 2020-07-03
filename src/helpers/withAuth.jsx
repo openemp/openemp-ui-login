@@ -13,10 +13,10 @@ export default function withAuth(AuthComponent) {
       } else {
         try {
           const confirm = getConfirm();
-          console.log('confirmation is:', confirm);
+          // console.log('confirmation is:', confirm);
           setUser(confirm);
         } catch (err) {
-          console.log(err);
+          // console.log(err);
           //   Auth.logout();
           //   this.props.history.replace('/login');
         }
@@ -24,10 +24,10 @@ export default function withAuth(AuthComponent) {
     }, []);
 
     if (user) {
-      console.log('confirmed!');
+      // console.log('confirmed!');
       return <AuthComponent user={user} />;
     }
-    console.log('not confirmed!');
+    // console.log('not confirmed!');
     return null;
   };
 }
