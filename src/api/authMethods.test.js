@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-process.env.API_PORT = process.env.PORT;
+process.env.USER_API_PORT = process.env.PORT;
 
 test('User login', async () => {
   // const data = await login('hono', 'password');

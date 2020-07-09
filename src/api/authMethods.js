@@ -79,7 +79,7 @@ export async function fetch(url, method, data, authorization) {
 // eslint-disable-next-line no-unused-vars
 export async function login({ username, password, remember }) {
   const { data } = await fetch(
-    `http://${process.env.API_HOST}:${process.env.API_PORT}/api/v1/users/authenticate`,
+    `http://${process.env.USER_API_HOST}:${process.env.USER_API_PORT}/api/v1/users/authenticate`,
     'POST',
     {
       username,
