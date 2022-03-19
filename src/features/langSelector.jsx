@@ -12,7 +12,7 @@ import {
   //   TextField,
   makeStyles,
   useTheme,
-} from '@openemp-mf/styleguide';
+} from '@openemp/styleguide';
 
 import langs from 'assets/i18n/translation.json';
 

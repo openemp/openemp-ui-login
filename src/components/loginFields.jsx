@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, FormControlLabel, Checkbox, Link, Grid, makeStyles, TextField, Form } from '@openemp-mf/styleguide';
+import { Button, FormControlLabel, Checkbox, Link, Grid, makeStyles, TextField, Form } from '@openemp/styleguide';
 import { LangSelector } from 'features';
 
 const useStyles = makeStyles((theme) => ({

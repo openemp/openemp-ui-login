@@ -18,7 +18,7 @@ import {
   Formik,
   Form,
   yup,
-} from '@openemp-mf/styleguide';
+} from '@openemp/styleguide';
 
 import { LoginFields } from 'components';
 

@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 import { Form } from 'features';
 import { loggedIn } from 'api/authMethods';
 import { Redirect } from '@reach/router';
-import { createJss, rtl, jssPreset, StylesProvider } from '@openemp-mf/styleguide';
+import { createJss, rtl, jssPreset, StylesProvider } from '@openemp/styleguide';
 
 import i18n from 'assets/i18n';
 
