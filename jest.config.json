@@ -1,8 +1,0 @@
-{
-  "transform": {
-    "^.+\\.[t|j]sx?$": "babel-jest"
-  },
-  "moduleNameMapper": {
-    "\\.(css)$": "identity-obj-proxy"
-  }
-}

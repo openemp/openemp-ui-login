@@ -1,17 +1,8 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "jest": true
-  },
-  "extends": ["airbnb", "airbnb/hooks", "prettier", "prettier/babel", "prettier/react"],
-  "parser": "babel-eslint",
-  "rules": {
-    "react/jsx-props-no-spreading": [0]
-  },
-  "settings": {
-    "import/resolver": {
-      "webpack": "webpack.config.js"
-    }
+  "extends": ["airbnb", "airbnb-typescript", "airbnb/hooks", "prettier"],
+  // "parser": "@babel/eslint-parser",yarn
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": ["./tsconfig.eslint.json"]
   }
 }
