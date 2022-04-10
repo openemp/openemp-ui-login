@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import { Redirect } from '@reach/router';
+import { createJss, rtl, jssPreset, StylesProvider } from '@openemp/styleguide';
 
-export default function Root(props: any) {
-  // eslint-disable-next-line react/prop-types
-  // eslint-disable-next-line react/destructuring-assignment
-  return <section>{props.name} is mounted!</section>;
+import { Form } from './features';
+import { loggedIn } from './api/authMethods';
+
+import './assets/i18n';
+
+const jss = createJss({ plugins: [...jssPreset().plugins, rtl()] });
+
+function Root() {
+  return !loggedIn() ? (
+    <Suspense fallback={null}>
+      <StylesProvider jss={jss}>
+        <Form />
+      </StylesProvider>
+    </Suspense>
+  ) : (
+    <Redirect to="/" noThrow />
+  );
 }
+
+export default Root;

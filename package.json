@@ -25,6 +25,7 @@
     "@babel/runtime": "^7.15.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
+    "@types/reach__router": "^1.3.10",
     "@types/testing-library__jest-dom": "^5.14.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
@@ -42,6 +43,7 @@
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "file-loader": "^6.2.0",
     "husky": "^7.0.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.6",
@@ -59,15 +61,24 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@openemp/styleguide": "../openemp-ui-styleguide/",
+    "@reach/router": "^1.3.4",
     "@types/jest": "^27.0.1",
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "@types/systemjs": "^6.1.1",
     "@types/webpack-env": "^1.16.2",
+    "axios": "^0.26.1",
+    "clsx": "^1.1.1",
+    "i18next": "^21.6.14",
+    "i18next-http-backend": "^1.4.0",
+    "jwt-decode": "^3.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-i18next": "^11.16.2",
     "single-spa": "^5.9.3",
-    "single-spa-react": "^4.3.1"
+    "single-spa-react": "^4.3.1",
+    "systemjs-webpack-interop": "^2.3.7"
   },
   "types": "dist/openemp-login.d.ts"
 }
