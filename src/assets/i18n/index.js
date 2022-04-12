@@ -23,7 +23,7 @@ i18n
     },
 
     backend: {
-      loadPath: `//${process.env.HOST}:${process.env.PORT}/public/i18n/{{lng}}.i18n.json`,
+      loadPath: `/login-ui/public/i18n/{{lng}}.i18n.json`,
     },
   });
 
